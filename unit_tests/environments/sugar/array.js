@@ -1433,6 +1433,16 @@ test('Array', function () {
 
 
 
+  // Array#alphabetize
+  arr = ["Z", "A"];
+  arr.alphabetize();
+  equal(arr, ["Z", "A"], 'Array#alphabetize | should not be destructive');
+
+  equal(["A", "e", "C", "d", "b"].alphabetize(), ["A", "b", "C", "d", "e"], 'Array#alphabetize | should sort letters into case insensitive alphabetical order');
+  equal(["A", 1].alphabetize(), [1, "A"], 'Array#alphabetize | should sort non-alphabetical characters before alphabetical characters');
+
+
+
   arr = [1,2,3,4,5,6,7,8,9,10];
   var firsts = [];
   firsts.push(arr.randomize().first());
